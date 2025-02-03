@@ -57,6 +57,7 @@ void ofApp::keyPressed(int key){
 			}
 		}
 		break;
+		//used lectures notes from Week 4
 	case 'i': case 'I':
 		for (size_t i = 1; i < randomNumbers.size(); i++)
 		{
