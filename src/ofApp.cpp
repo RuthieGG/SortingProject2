@@ -36,6 +36,13 @@ void ofApp::draw(){
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
+	switch (key)
+	{
+	case 'r': case 'R':
+		for (int i = 0; i < 5; i++)
+			randomNumbers[i] = 10 + rand() % 91;
+		break;
+	}
 
 }
 
