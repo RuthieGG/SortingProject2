@@ -22,7 +22,14 @@ void ofApp::draw(){
 		float x = 100 + i * 200;
 		float y = 170;
 		float radius = randomNumbers[i];
+
+		ofSetColor(255, 141, 161);
 		ofDrawCircle(x, y, radius);
+
+		ofSetColor(0);
+		string number = ofToString(randomNumbers[i], 2);
+		ofDrawBitmapString(number, x - 10, y + 5);
+
 	}
 
 }
