@@ -57,6 +57,19 @@ void ofApp::keyPressed(int key){
 			}
 		}
 		break;
+	case 'i': case 'I':
+		for (size_t i = 1; i < randomNumbers.size(); i++)
+		{
+			int key = randomNumbers[i];
+			int j = i - 1;
+			while (j >= 0 && randomNumbers[j] > key)
+			{
+				randomNumbers[j + 1] = randomNumbers[j];
+				j--;
+			}
+			randomNumbers[j+1] = key;
+		}
+		break;
 	}
 
 }
