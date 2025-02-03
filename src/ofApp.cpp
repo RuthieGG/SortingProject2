@@ -38,6 +38,8 @@ void ofApp::draw(){
 void ofApp::keyPressed(int key){
 	switch (key)
 	{
+		// For the randomizer
+		// https://www.digitalocean.com/community/tutorials/random-number-generator-c-plus-plus
 	case 'r': case 'R':
 		for (int i = 0; i < 5; i++)
 			randomNumbers[i] = 10 + rand() % 91;
