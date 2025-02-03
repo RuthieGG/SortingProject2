@@ -44,6 +44,19 @@ void ofApp::keyPressed(int key){
 		for (int i = 0; i < 5; i++)
 			randomNumbers[i] = 10 + rand() % 91;
 		break;
+		//used lectures notes from Week 4.
+	case 'b': case 'B':
+		for (size_t i = 0; i < randomNumbers.size(); i++) 
+		{
+			for (size_t j = 0; j < randomNumbers.size() - i - 1; j++)
+			{
+				if (randomNumbers[j] > randomNumbers[j + 1])
+				{
+					std::swap(randomNumbers[j], randomNumbers[j + 1]);
+				}
+			}
+		}
+		break;
 	}
 
 }
