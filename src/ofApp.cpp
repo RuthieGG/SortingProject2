@@ -1,7 +1,12 @@
 #include "ofApp.h"
 
 //--------------------------------------------------------------
+std::vector <int> randomNumbers;
 void ofApp::setup(){
+	for (int i = 0; i < 5; i++)
+	{
+		randomNumbers.push_back(10 + rand() % 91);
+	}
 
 }
 
