@@ -17,6 +17,13 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
+	for (int i = 0; i < 5; i++)
+	{
+		float x = 100 + i * 200;
+		float y = 170;
+		float radius = randomNumbers[i];
+		ofDrawCircle(x, y, radius);
+	}
 
 }
 
