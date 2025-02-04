@@ -33,6 +33,29 @@ void ofApp::draw(){
 	}
 
 }
+void merge(std::vector<int>& randomNumbers, int left, int mid, int right) {
+	std::vector<int> temp;
+	int i = left, j = mid + 1;
+	while (i <= mid && j <= right) 
+	{
+		if (randomNumbers[i] <= randomNumbers[j]) temp.push_back(randomNumbers[i++]);
+		else temp.push_back(randomNumbers[j++]);
+	}
+	while (i <= mid) temp.push_back(randomNumbers[i++]);
+	while (j <= right) temp.push_back(randomNumbers[j++]);
+	for (int k = 0; k < temp.size(); k++) randomNumbers[left + k] = temp[k];
+}
+
+void mergeSort(std::vector<int>& randomNumbers, int left, int right) 
+{
+	if (left < right) 
+	{
+		int mid = left + (right - left) / 2;
+		mergeSort(randomNumbers, left, mid);
+		mergeSort(randomNumbers, mid + 1, right);
+		merge(randomNumbers, left, mid, right);
+	}
+}
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
@@ -70,6 +93,9 @@ void ofApp::keyPressed(int key){
 			}
 			randomNumbers[j+1] = key;
 		}
+		break;
+	case 'm':case 'M':
+		mergeSort(randomNumbers, 0, randomNumbers.size() - 1);
 		break;
 	}
 
