@@ -33,6 +33,20 @@ void ofApp::draw(){
 	}
 
 }
+void merge(std::vector<int>& randomNumbers, int left, int mid, int right)
+{
+	std::vector<int> temp;
+	int i = left, j = mid + 1;
+	while (i <= mid && j <= right)
+	{
+		if (randomNumbers[i] <= randomNumbers[j]) temp.push_back(randomNumbers[i++]);
+		else temp.push_back(randomNumbers[j++]);
+	}
+	while (i <= mid) temp.push_back(randomNumbers[i++]);
+	while (j <= right) temp.push_back(randomNumbers[j++]);
+	for (int k = 0; k < temp.size(); k++) randomNumbers[left + k] = temp[k];
+
+}
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
