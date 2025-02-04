@@ -33,6 +33,7 @@ void ofApp::draw(){
 	}
 
 }
+// used lectures notes from Week 4
 void merge(std::vector<int>& randomNumbers, int left, int mid, int right) {
 	std::vector<int> temp;
 	int i = left, j = mid + 1;
