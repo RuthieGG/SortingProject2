@@ -1,6 +1,4 @@
 #include "ofApp.h"
-#include <vector>
-#include <cstdlib>
 
 //--------------------------------------------------------------
 std::vector <int> randomNumbers;
@@ -35,7 +33,6 @@ void ofApp::draw(){
 	}
 
 }
-
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
